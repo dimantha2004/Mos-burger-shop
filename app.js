@@ -1,18 +1,26 @@
-const username = "nish"; 
-const password = "123"; 
+const correctUsername = "nishshanka";
+const correctPassword = "123";
 
-function login() {
-    let username = document.getElementById("USERNAME").value;
-    let password = document.getElementById("PASSWORD").value;
+function login(event) {
+    event.preventDefault(); 
+    const username = document.getElementById("USERNAME").value;
+    const password = document.getElementById("PASSWORD").value;
 
-    if (username === USERNAME && password === PASSWORD) {
-
-
-
-        
-        
+    if (username === correctUsername && password === correctPassword) {
+        alert("Login successful!");
+        loadNextPage(); 
     } else {
-        alert("Password / Username Incorrect");
+        alert("Invalid user name or password...! check again");
     }
 }
+function loadNextPage() {
+    const mainContent = document.getElementById("main-content");
+    mainContent.innerHTML = `
+        <div class="welcome-container">
+            <h1>Welcome to MOS BURGER</h1>
+            
+        </div>
+    `;
+}
+
 
